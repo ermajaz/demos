@@ -1,0 +1,19 @@
+import React from 'react'
+import styled from 'styled-components'
+
+function Suspension() {
+  return (
+    <Container>Suspension</Container>
+  )
+}
+
+export default Suspension;
+
+const Container = styled.div`
+width: 90vw;
+height: 10vh;
+font-size: 3rem;
+text-align:center;
+color: black;
+
+`

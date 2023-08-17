@@ -1,0 +1,46 @@
+.partsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 150px;
+  row-gap: 20px;
+  width: 100%;
+  padding: 2rem 2rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  
+}
+
+.card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+  .partsContainer {
+    justify-content: center;
+    gap: 30px; /* Adjust gap for smaller screens */
+    row-gap: 10px; /* Adjust row-gap for smaller screens */
+  }
+}
