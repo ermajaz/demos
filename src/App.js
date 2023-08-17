@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Brands from './components/Brands';
 import AboutUs from './components/AboutUs'
 import ContactUs from './components/ContactUs'
 import Term_Condition from './components/Term_Condition'
@@ -16,15 +13,14 @@ import Suspension from './components/Suspension'
 import WheelSet from './components/WheelSet'
 import DriveTrain from './components/DriveTrain'
 import BrackSet from './components/BrackSet'
-import Navigation from "./components/Navigation/Navigation";
+import Asics from './components/Asics';
+import Home from './components/Home';
 function App() {
   return (
     <Router>
     <div className="App">
-      <Header />
-      <Navigation/>
       <Routes>
-        {/* Define your routes using Route elements */}
+        <Route exact path="/" element={<Home/>} />
         <Route exact path="/aboutUs" element={<AboutUs/>} />
         <Route exact path="/contactUs" element={<ContactUs/>} />
         <Route exact path="/term_condition" element={<Term_Condition/>} />
@@ -37,10 +33,8 @@ function App() {
         <Route exact path="/wheelSet" element={<WheelSet/>} />
         <Route exact path="/cockpit" element={<Cockpit/>} />
         <Route exact path="/brackSet" element={<BrackSet/>} />
-        {/* Add more routes as needed */}
+        <Route exact path="/asics" element={<Asics/>} />
       </Routes>
-      <Brands/>
-      <Footer />
     </div>
   </Router>
   );

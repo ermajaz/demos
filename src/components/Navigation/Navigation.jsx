@@ -14,9 +14,9 @@ const Navigation = () => {
   let mainBackgroundColor = "var(--color-primary)"; // Default background color
 
   if (selectedSection === "accessories") {
-    mainBackgroundColor = "var(--color-secondary)";
+    mainBackgroundColor = "var(--color-primary)";
   } else if (selectedSection === "clothing") {
-    mainBackgroundColor = "var(--color-tertiary)";
+    mainBackgroundColor = "var(--color-primary)";
   }
 
   return (
@@ -27,7 +27,7 @@ const Navigation = () => {
             backgroundColor:
               selectedSection === "parts"
                 ? "var(--color-primary)"
-                : "var(--color-primary)",
+                : "var(--color-secondary)",
           }}
           onClick={() => handleSectionClick("parts")}
         >
@@ -37,7 +37,7 @@ const Navigation = () => {
           style={{
             backgroundColor:
               selectedSection === "accessories"
-                ? "var(--color-secondary)"
+                ? "var(--color-primary)"
                 : "var(--color-secondary)",
           }}
           onClick={() => handleSectionClick("accessories")}
@@ -48,8 +48,8 @@ const Navigation = () => {
           style={{
             backgroundColor:
               selectedSection === "clothing"
-                ? "var(--color-tertiary)"
-                : "var(--color-tertiary)",
+                ? "var(--color-primary)"
+                : "var(--color-secondary)",
           }}
           onClick={() => handleSectionClick("clothing")}
         >

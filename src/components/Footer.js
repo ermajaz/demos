@@ -113,7 +113,6 @@ function Footer() {
 export default Footer;
 
 const Container = styled.div`
-  margin-top: 10;
   padding: 1.5rem 4rem;
   min-height: 40vh;
   background: #090b13;
@@ -133,6 +132,9 @@ const Container = styled.div`
 const AboutUS = styled.div`
   min-width: 20vw;
   width: 25vw;
+  h3{
+    padding-right:1rem;
+  }
   @media (max-width: 768px) {
     width: 100%;
     flex-direction: column;
@@ -172,6 +174,9 @@ const Secure = styled.div`
   }
 `;
 const Informations = styled.div`
+h3{
+  padding: 0 1rem;
+}
   ul {
     li {
       a {
@@ -198,11 +203,18 @@ const Informations = styled.div`
 `;
 
 const Categories = styled(Informations)`
+h3{
+  padding: 0 1rem;
+}
   @media (max-width: 768px) {
     display: none;
   }
 `;
-const Contact = styled.div``;
+const Contact = styled.div`
+h3{
+  padding: 0 1rem;
+}
+`;
 
 const Address = styled.div`
   display: flex;
@@ -265,6 +277,9 @@ const Social = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  @media (max-width: 768px) {
+    margin-bottom: 1.3rem;
+  }
 `;
 const Facebook = styled.img`
   width: 2.8rem;

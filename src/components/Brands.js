@@ -8,34 +8,34 @@ function Brands() {
       <h3>OUR TOP BRANDS</h3>
       <Brand>
         <div>
-          <Link to="/home">
+          <Link to="/asics">
             <img src="/images/asics.png" alt="" />
           </Link>
         </div>
 
         <div>
-          <Link to="/home">
+          <Link to="/asics">
             <img src="/images/cube.png" alt="" />
           </Link>
         </div>
         <div>
-          <Link to="/home">
+          <Link to="/asics">
             <img src="/images/gowewear.png" alt="" />
           </Link>
         </div>
         <div>
           {" "}
-          <Link to="/home">
+          <Link to="/asics">
             <img src="/images/lowa.png" alt="" />
           </Link>
         </div>
         <div>
-          <Link to="/home">
+          <Link to="/asics">
             <img src="/images/schewale.png" alt="" />
           </Link>
         </div>
         <div>
-          <Link to="/home">
+          <Link to="/asics">
             <img src="/images/swear.png" alt="" />
           </Link>
         </div>
@@ -47,12 +47,15 @@ function Brands() {
 export default Brands;
 
 const Container = styled.div`
-  margin-bottom: 1rem;
   background: #090b13;
+  background:white;
+  color: black;
   h3 {
     padding: 2rem 0 0 2.5rem;
     letter-spacing: 4px;
-    font-family: "Helvetica";
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #48494a;
   }
   padding-bottom: 4rem;
   @media (max-width: 768px) {
@@ -71,11 +74,13 @@ const Container = styled.div`
 `;
 const Brand = styled.div`
   background: #090b13;
+  background:white;
+  color: black;
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  margin-left: 300px;
+  margin-left: 15vw;
   div {
     a {
       text-align: center;

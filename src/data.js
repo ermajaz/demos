@@ -10,128 +10,84 @@ import wheeldisk from "./img/parts/wheeldisk.webp";
 export const parts = [
   {
     id: 1,
-    img: seat,
-    name: "Seat",
+    img: "https://cdn.shoplightspeed.com/shops/610322/files/37930879/650x650x2/2022-specialized-crux-10r-frameset.jpg",
+    name: "Frameset",
   },
   {
     id: 2,
-    img: cyclecover,
-    name: "Cycle Cover",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQcatyXKmIZcvC6Rmn5lK0BfaYwutKlXE9ug&usqp=CAU",
+    name: "Suspension",
   },
   {
     id: 3,
-    img: freewheel,
-    name: "Freewheel",
+    img: "https://cdn.shopify.com/s/files/1/0066/2283/8853/products/sram-165mm-sram-x0-t-type-build-kit-710845892271-30613270134847.jpg?v=1679413400&width=410",
+    name: "Drivetrain",
   },
   {
     id: 4,
-    img: handle,
-    name: "Handle Grip",
+    img: "https://cdn.shopify.com/s/files/1/0014/4385/6450/products/012-5656A_Std_400x.jpg?v=1665851656",
+    name: "Wheel Set",
   },
   {
     id: 5,
-    img: gearchain,
-    name: "Gear Chain",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqUwdnPqia5OCSAEpr09LO2k2yH21sssHRNg&usqp=CAU",
+    name: "Cock Pit",
   },
   {
     id: 6,
-    img: mudguard,
-    name: "Mudguard",
-  },
-  {
-    id: 7,
-    img: speedometer,
-    name: "Speedometer",
-  },
-  {
-    id: 8,
-    img: wheeldisk,
-    name: "Wheel Disk",
+    img: "https://rukminim1.flixcart.com/image/850/1000/kgcl7680/bicycle-brake-disk/x/c/u/bicycle-cycling-v-brake-set-alloy-front-rear-brake-bicycle-parts-original-imafwhhgh8nre3dc.jpeg?q=90",
+    name: "Brakeset",
   },
 ];
+
 
 export const accessories = [
   {
     id: 1,
-    img: "https://www.energysistem.com/cdnassets/products/45305/principal_2000.jpg",
-    name: "Headphones",
+    img: "https://m.media-amazon.com/images/I/517aTEkcNeL._AC_UF1000,1000_QL80_.jpg",
+    name: "Bike Locks & Safety",
   },
   {
     id: 2,
-    img: "https://www.boat-lifestyle.com/cdn/shop/products/main-image-3_e934902f-345b-4cc4-80b9-9ef3d77a1f34.png?v=1661272676",
-    name: "Watches",
+    img: "https://img.directindustry.com/images_di/photo-mg/54415-10075698.jpg",
+    name: "Racks & transport",
   },
   {
     id: 3,
-    img: "https://m.media-amazon.com/images/I/410uEayAmAL.jpg",
-    name: "Airpods",
+    img: "https://m.media-amazon.com/images/I/51JofEtX89L._SX425_.jpg",
+    name: "Storage Compartments",
   },
   {
     id: 4,
-    img: "https://m.media-amazon.com/images/I/71K2DBFeGHL._AC_UY1000_.jpg",
-    name: "Bags",
+    img: "https://www.oceanlighting.co.uk/images/endon-76587-urban-single-suspension-antique-brass-p33180-56598_image.jpg",
+    name: "Lights",
   },
   {
     id: 5,
-    img: "https://www.jiomart.com/images/product/original/rvrgwpjvsp/bruton-trendy-sports-shoes-for-men-blue-product-images-rvrgwpjvsp-0-202209021256.jpg?im=Resize=(1000,1000)",
-    name: "Shoes",
-  },
-  {
-    id: 6,
-    img: "https://m.media-amazon.com/images/I/51UzqbHUMHL._AC_UY1100_.jpg",
-    name: "Eyewears",
-  },
-  {
-    id: 7,
-    img: "https://m.media-amazon.com/images/I/81aBsPLXJxL._UX679_.jpg",
-    name: "Scarves",
-  },
-  {
-    id: 8,
-    img: "https://jesusgang.com.ng/wp-content/uploads/2020/10/BUCKET-HAT-BLCAK-300x300.png",
-    name: "Head Wears",
+    img: "https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg",
+    name: "Electronics",
   },
 ];
 
 export const clothing = [
   {
     id: 1,
-    img: "https://5.imimg.com/data5/SELLER/Default/2021/5/RI/NW/BQ/1756364/cricket-jersey-t-shirt.jpg",
-    name: "T-Shirts",
+    img: "https://m.media-amazon.com/images/I/9109GQbJ1pL._AC_UF350,350_QL80_.jpg",
+    name: "Helmets & Body Armour",
   },
   {
     id: 2,
-    img: "https://www.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw6fe98ec9/images/hi-res/50655_PINO.jpg?sw=768&sh=768&sfrm=png&q=95&bgcolor=f5f5f5",
-    name: "Sweaters",
+    img: "https://images-cdn.ubuy.co.in/636b5fafc5d45906d27e7b53-cycling-jersey-men-summer-short-sleeve.jpg",
+    name: "Cycling Shirts & Jackets",
   },
   {
     id: 3,
-    img: "https://www.craftclothing.ph/cdn/shop/products/PS59.png?v=1643796180",
-    name: "Polo shirts",
+    img: "https://m.media-amazon.com/images/I/81Ng3sxWYiL._AC_UY1100_.jpg",
+    name: "Cycling Shorts & Pants",
   },
   {
     id: 4,
-    img: "https://img.fruugo.com/product/8/59/404866598_max.jpg",
-    name: "Cock Tails",
-  },
-  {
-    id: 5,
-    img: "https://www.brides.com/thmb/TfTff4S9VI1cazNnwEz_hcLx7lw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Sage-Teddy-2021-273sq-fe3d71a6d3a24cee886bb6d2b775005c.jpg",
-    name: "Wedding Dresses",
-  },
-  {
-    id: 6,
-    img: "https://i.pinimg.com/550x/70/c3/dc/70c3dc490fda5cea7400c90b2276c6fe.jpg",
-    name: "Smart Casuals",
-  },
-  {
-    id: 7,
-    img: "https://diademstore-on-speed.b-cdn.net/data/products/2a3b24a2df01a1a4304633a2cfcc5d5fIXc9pnXVAz0mogjVXbh5YeaoVW8cofEEwstSGdOg_variant_1_1679122993.webp",
-    name: "Gowns",
-  },
-  {
-    id: 8,
-    img: "https://images.jdmagicbox.com/quickquotes/images_main/3-piece-suit-men-387596568-ko4en.jpeg",
-    name: "Coat Suits",
+    img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/f9d52817f7524d3fb442af3b01717dfa_9366/Runfalcon_3.0_Shoes_Black_HQ3790_01_standard.jpg",
+    name: "Shoes",
   },
 ];

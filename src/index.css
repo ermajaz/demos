@@ -22,9 +22,9 @@ code {
 }
 
 :root {
-  --color-primary: #090b13;
-  --color-secondary: #090b13;
-  --color-tertiary: #090b13;
+  --color-primary: #e8eaed;
+  --color-secondary: #f9f9f9;
+  /* --color-tertiary: #f7f7f7; */
 }
 
 .app {

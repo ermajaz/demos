@@ -51,7 +51,7 @@ const HeaderDiv = styled.nav`
   overflow-x: hidden;
 
   @media (max-width: 768px) {
-    height: 90px;
+    height: 100px;
     padding: 0.5rem 1rem;
     flex-direction: column;
     align-items: start;

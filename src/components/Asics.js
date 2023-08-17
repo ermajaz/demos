@@ -3,22 +3,22 @@ import styled from 'styled-components'
 import Header from './Header';
 import Footer from './Footer';
 
-function Shipping_delivery() {
+
+function Asics() {
   return (
     <>
     <Header/>
-    <Container>Shipping_delivery</Container>
+    <Container>Asics</Container>
     <Footer/>
     </>
   )
-    
 }
 
-export default Shipping_delivery;
+export default Asics;
 
 const Container = styled.div`
 width: 90vw;
-height: 10vh;
+height: 48vh;
 font-size: 3rem;
 text-align:center;
 color: black;
