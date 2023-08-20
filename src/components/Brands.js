@@ -47,14 +47,17 @@ function Brands() {
 export default Brands;
 
 const Container = styled.div`
+margin: 3vh 0;
   background: #090b13;
   background:white;
   color: black;
   h3 {
+    margin-bottom:8vh;
+    text-align:center;
     padding: 2rem 0 0 2.5rem;
     letter-spacing: 4px;
     font-family: monospace;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #48494a;
   }
   padding-bottom: 4rem;
@@ -82,6 +85,7 @@ const Brand = styled.div`
   grid-gap: 10px;
   margin-left: 15vw;
   div {
+    margin: 2rem 0;
     a {
       text-align: center;
     }

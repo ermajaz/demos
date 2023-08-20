@@ -9,8 +9,8 @@ import image5 from "../brandSpotlight/BS-5.jpg";
 
 const Parent = styled.div`
   display: grid;
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
 
 
   @media (min-width: 768px) {

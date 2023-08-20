@@ -18,14 +18,17 @@ function Promises() {
 export default Promises;
 
 const Container = styled.div`
-  background: #090b13;
-  background:#f9f9f9;
+  // background: #090b13;
+  // background:#f9f9f9;
   color: black;
+  margin: 5vh 0;
   h3 {
+    text-align:center;
     padding: 2rem 0 0 2.5rem;
     letter-spacing: 4px;
+    margin-bottom: 8vh;
     font-family: monospace;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #48494a;
     text-transform: uppercase;
   }
@@ -45,8 +48,8 @@ const PromiseDiv = styled.div`
   grid-gap: 10px;
   margin-left: 15vw;
   img {
-   width: 100px;
-   height: 100px;
+   width: 120px;
+   height: 120px;
   }
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);

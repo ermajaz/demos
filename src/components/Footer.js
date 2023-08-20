@@ -90,6 +90,7 @@ function Footer() {
             <br /> Himachal Pradesh 171009
           </p>
         </Address>
+        <hr />
         <Phone>
           <Ph style={fontS} />
           <p>Phone: 883947882 / 900289492 </p>
@@ -99,11 +100,15 @@ function Footer() {
           <p>Email: support@cyclecircle.one</p>
         </Email>
         <Social>
-          <Facebook src="https://cdn-icons-png.flaticon.com/128/733/733547.png" />
-          <Google src="https://cdn-icons-png.flaticon.com/128/2111/2111450.png" />
-          <Instagram src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" />
-          <Youtube src="https://cdn-icons-png.flaticon.com/128/3938/3938026.png" />
-          <Twitter src="https://cdn-icons-png.flaticon.com/128/2504/2504947.png" />
+          <Link to="https://www.facebook.com/profile.php?id=100083101911813&_rdr" target="_blank"><Facebook style={fontSS} src="https://cdn-icons-png.flaticon.com/128/733/733547.png" /></Link>
+          <Link to="https://www.google.com/cyclecircle" target="_blank"><Google src="https://cdn-icons-png.flaticon.com/128/2111/2111450.png" /></Link>
+          <Link to="https://www.instagram.com/cyclecircle.one" target="_blank"><Instagram src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" /></Link>
+          <Link to="https://www.youtube.com/cyclecircle" target="_blank"><Youtube src="https://cdn-icons-png.flaticon.com/128/3938/3938026.png" /></Link>
+          <Link to="https://www.twitter.com/cyclecircle" target="_blank"><Twitter src="https://cdn-icons-png.flaticon.com/128/2504/2504947.png" /></Link>
+          
+
+         
+          
         </Social>
       </Contact>
     </Container>
@@ -214,6 +219,16 @@ const Contact = styled.div`
 h3{
   padding: 0 1rem;
 }
+hr{
+  width: 85%;
+  margin-left:2.5rem;
+}
+@media (max-width: 768px) {
+  hr{
+    width: 95%;
+    margin-left:0.8rem;
+  }
+}
 `;
 
 const Address = styled.div`
@@ -222,7 +237,7 @@ const Address = styled.div`
   p {
     margin-left: 0.8rem;
   }
-  border-bottom: 2px solid white;
+  // border-bottom: 2px solid white;
   font-size: 0.9rem;
   margin-top: -15px;
 
@@ -233,6 +248,7 @@ const Address = styled.div`
   }
 `;
 const Location = styled(LocationOnIcon)`
+color: #8c8b88;
   @media (max-width: 768px) {
     margin-top: 0.8rem;
   }
@@ -251,6 +267,7 @@ const Phone = styled.div`
   }
 `;
 const Ph = styled(PhoneIcon)`
+color: #8c8b88;
   @media (max-width: 768px) {
     margin-top: 0.8rem;
   }
@@ -269,6 +286,7 @@ const Email = styled.div`
   }
 `;
 const Mail = styled(MailIcon)`
+color: #8c8b88;
   @media (max-width: 768px) {
     margin-top: 0.8rem;
   }
@@ -279,11 +297,12 @@ const Social = styled.div`
   justify-content: flex-start;
   @media (max-width: 768px) {
     margin-bottom: 1.3rem;
+    justify-content: center;
   }
 `;
 const Facebook = styled.img`
-  width: 2.8rem;
-  height: 1.8rem;
+  width: 2.2rem;
+  height: 1.2rem;
   padding: 0px 8px;
   margin: 0.2rem;
   cursor: pointer;
@@ -305,3 +324,7 @@ const Twitter = styled(Facebook)``;
 const fontS = {
   fontSize: "25",
 };
+const fontSS = {
+  fontSize: "20",
+};
+

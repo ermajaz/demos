@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navigation.css";
 import Parts from "../Parts/Parts";
 import Accessories from "../Accessories/Accessories";
 import Clothing from "../Clothing/Clothing";
+import axios from "axios";
 
 const Navigation = () => {
   const [selectedSection, setSelectedSection] = useState("parts");
+  const [categoriesID, setCategoriesID] = useState("");
+  const [categories, setCategories] = useState([]);
 
-  const handleSectionClick = (section) => {
+  const handleSectionClick = (section, categoriesId) => {
+    setCategoriesID(categoriesId);
     setSelectedSection(section);
   };
 
@@ -19,8 +23,38 @@ const Navigation = () => {
     mainBackgroundColor = "var(--color-primary)";
   }
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/v1/categories")
+      .then((res) => {
+        setCategories(res.data);
+        console.log(res.data); // Store the API response data in the state
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
   return (
     <div className="navigationContainer">
+      {/* <div className="sections">
+        {categories.map((category) => (
+          <span
+            key={category.id}
+            style={{
+              backgroundColor:
+                selectedSection === category.name.toLowerCase()
+                  ? "var(--color-primary)"
+                  : "var(--color-primary)",
+            }}
+            onClick={() =>
+              handleSectionClick(category.name.toLowerCase(), category._id)
+            }
+          >
+            {category.name}
+          </span>
+        ))}
+      </div> */}
       <div className="sections">
         <span
           style={{
@@ -28,6 +62,11 @@ const Navigation = () => {
               selectedSection === "parts"
                 ? "var(--color-primary)"
                 : "var(--color-secondary)",
+            boxShadow:
+              selectedSection === "parts"
+                ? "gray 0px -6px 6px -6px"
+                : "0px -2px 4px 0px gray inset",
+            borderRadius: selectedSection === "parts" ? "0px 10px 0px 0px" : "0px",
           }}
           onClick={() => handleSectionClick("parts")}
         >
@@ -39,6 +78,12 @@ const Navigation = () => {
               selectedSection === "accessories"
                 ? "var(--color-primary)"
                 : "var(--color-secondary)",
+            boxShadow:
+              selectedSection === "accessories"
+                ? "gray 0px -6px 6px -6px"
+                : "-2px -2px 4px 0px gray inset",
+
+                borderRadius: selectedSection === "accessories" ? "10px 10px 0px 0px" : "0px",
           }}
           onClick={() => handleSectionClick("accessories")}
         >
@@ -50,6 +95,13 @@ const Navigation = () => {
               selectedSection === "clothing"
                 ? "var(--color-primary)"
                 : "var(--color-secondary)",
+
+            boxShadow:
+              selectedSection === "clothing"
+                ? "gray 0px -6px 6px -6px"
+                : "-2px -2px 4px 0px gray inset",
+
+                borderRadius: selectedSection === "clothing" ? "0px 10px 0px 0px" : "0px",
           }}
           onClick={() => handleSectionClick("clothing")}
         >
@@ -57,23 +109,13 @@ const Navigation = () => {
         </span>
       </div>
       <div className="main" style={{ backgroundColor: mainBackgroundColor }}>
-        {selectedSection === "parts" && <Parts />}
-        {selectedSection === "accessories" && <Accessories />}
-        {selectedSection === "clothing" && <Clothing />}
-        <div className="carouselDots">
-          <span
-            className="dot"
-            onClick={() => handleSectionClick("parts")}
-          ></span>
-          <span
-            className="dot"
-            onClick={() => handleSectionClick("accessories")}
-          ></span>
-          <span
-            className="dot"
-            onClick={() => handleSectionClick("clothing")}
-          ></span>
-        </div>
+        {selectedSection === "parts" && <Parts categoriesID={categoriesID} />}
+        {selectedSection === "accessories" && (
+          <Accessories categoriesID={categoriesID} />
+        )}
+        {selectedSection === "clothing" && (
+          <Clothing categoriesID={categoriesID} />
+        )}
       </div>
     </div>
   );

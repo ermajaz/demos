@@ -67,6 +67,11 @@ export const accessories = [
     img: "https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg",
     name: "Electronics",
   },
+  {
+    id: 6,
+    img: "https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg",
+    name: "Others",
+  },
 ];
 
 export const clothing = [
@@ -89,5 +94,15 @@ export const clothing = [
     id: 4,
     img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/f9d52817f7524d3fb442af3b01717dfa_9366/Runfalcon_3.0_Shoes_Black_HQ3790_01_standard.jpg",
     name: "Shoes",
+  },
+  {
+    id: 5,
+    img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/f9d52817f7524d3fb442af3b01717dfa_9366/Runfalcon_3.0_Shoes_Black_HQ3790_01_standard.jpg",
+    name: "Gloves",
+  },
+  {
+    id: 6,
+    img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/f9d52817f7524d3fb442af3b01717dfa_9366/Runfalcon_3.0_Shoes_Black_HQ3790_01_standard.jpg",
+    name: "Others",
   },
 ];
