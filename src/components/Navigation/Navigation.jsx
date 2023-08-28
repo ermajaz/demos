@@ -7,7 +7,7 @@ import axios from "axios";
 
 const Navigation = () => {
   const [selectedSection, setSelectedSection] = useState("parts");
-  const [categoriesID, setCategoriesID] = useState("");
+  const [categoriesID, setCategoriesID] = useState("64de7823cdba27c912b2d1ce");
   const [categories, setCategories] = useState([]);
 
   const handleSectionClick = (section, categoriesId) => {
@@ -25,7 +25,7 @@ const Navigation = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/v1/categories")
+      .get("https://cyclecircle.onrender.com/api/v1/categories")
       .then((res) => {
         setCategories(res.data);
         console.log(res.data); // Store the API response data in the state
@@ -46,6 +46,14 @@ const Navigation = () => {
                 selectedSection === category.name.toLowerCase()
                   ? "var(--color-primary)"
                   : "var(--color-primary)",
+              boxShadow:
+                selectedSection === category.name.toLowerCase()
+                  ? "gray 0px -6px 6px -6px"
+                  : "0px -2px 4px 0px gray inset",
+              borderRadius:
+                selectedSection === category.name.toLowerCase()
+                  ? "0px 10px 0px 0px"
+                  : "0px",
             }}
             onClick={() =>
               handleSectionClick(category.name.toLowerCase(), category._id)

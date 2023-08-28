@@ -6,6 +6,7 @@ import Navigation from "./Navigation/Navigation";
 import Promises from './Promises';
 import BrandSpotlight from './BrandSpotlight';
 import Banner from './Banner';
+import HotDeals from './HotDeals';
 function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ function Home() {
       <Header />
       <Navigation/>
       <Banner/>
+      <HotDeals/>
       <Promises/>
       <BrandSpotlight/>
       <Brands/>

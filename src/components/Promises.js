@@ -23,18 +23,22 @@ const Container = styled.div`
   color: black;
   margin: 5vh 0;
   h3 {
-    text-align:center;
-    padding: 2rem 0 0 2.5rem;
-    letter-spacing: 4px;
-    margin-bottom: 8vh;
-    font-family: monospace;
-    font-size: 1.8rem;
-    color: #48494a;
+    font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
     text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 5vh;
+    text-align: center;
+    padding: 2rem 0 1.4rem 0;
+    color: black;
   }
   padding-bottom: 2rem;
   @media (max-width: 768px) {
     h3 {
+      margin-bottom: 4vh;
+      font-size: 1.8rem;
         padding: 1rem 0;
       text-align: center;
     }
@@ -46,13 +50,12 @@ const PromiseDiv = styled.div`
 
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-  margin-left: 15vw;
+  place-items: center;
   img {
    width: 120px;
    height: 120px;
   }
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-left:15vw;
   }
 `;

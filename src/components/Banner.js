@@ -70,16 +70,18 @@ margin-left: 2.8rem;
     overflow:visible;
   }
   .slick-next{
-    right: 10px;
+    right: 30px;
   }
   .slick-next:before{
-    font-size: 30px;
+    font-size: 50px;
+    color: rgba(0,0,0,0.5);
   }
   .slick-prev{
-    left: 10px;
+    left: 15px;
   }
   .slick-prev:before{
-    font-size: 30px;
+    font-size: 50px;
+    color: rgba(0,0,0,0.5);
   }
   button{
     z-index: 1;

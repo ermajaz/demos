@@ -14,7 +14,7 @@ import { clothing } from "../../data";
 
 //   const fetchData = async () => {
 //     try {
-//       const response = await axios.get(`http://localhost:8000/api/v1/navigator/${categoryId}`);
+//       const response = await axios.get(`https://cyclecircle.onrender.com/api/v1/navigator/${categoryId}`);
       
 //       console.log(response.data);
 //       setSub(response.data); // Use response.data instead of response.json()

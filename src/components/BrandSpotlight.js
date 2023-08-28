@@ -13,13 +13,15 @@ const Parent = styled.div`
   grid-row-gap: 8px;
 
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
+  // @media (min-width: 768px) {
+  //   grid-template-columns: repeat(5, 1fr);
+  //   grid-template-rows: repeat(2, 1fr);
+  // }
   @media (max-width: 768px) {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 4px;
+  grid-row-gap: 4px;
   }
 `;
 

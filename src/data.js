@@ -45,7 +45,7 @@ export const accessories = [
   {
     id: 1,
     img: "https://m.media-amazon.com/images/I/517aTEkcNeL._AC_UF1000,1000_QL80_.jpg",
-    name: "Bike Locks & Safety",
+    name: "Locks & Safety",
   },
   {
     id: 2,
@@ -55,7 +55,7 @@ export const accessories = [
   {
     id: 3,
     img: "https://m.media-amazon.com/images/I/51JofEtX89L._SX425_.jpg",
-    name: "Storage Compartments",
+    name: "Storage Compts",
   },
   {
     id: 4,
@@ -69,6 +69,16 @@ export const accessories = [
   },
   {
     id: 6,
+    img: "https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg",
+    name: "Others",
+  },
+  {
+    id: 7,
+    img: "https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg",
+    name: "Others",
+  },
+  {
+    id: 8,
     img: "https://ecelectronics.com/wp-content/uploads/2020/04/Modern-Electronics-EC-.jpg",
     name: "Others",
   },
@@ -88,7 +98,7 @@ export const clothing = [
   {
     id: 3,
     img: "https://m.media-amazon.com/images/I/81Ng3sxWYiL._AC_UY1100_.jpg",
-    name: "Cycling Shorts & Pants",
+    name: "Cycling Shorts",
   },
   {
     id: 4,

@@ -137,6 +137,8 @@ const Container = styled.div`
 const AboutUS = styled.div`
   min-width: 20vw;
   width: 25vw;
+  color:#e8e6df;
+  font-size: 0.9rem;
   h3{
     padding-right:1rem;
   }
@@ -155,7 +157,7 @@ const Payment = styled.div`
   margin-top: 2rem;
 
   svg {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-right: 0.8rem;
     color: white;
   }
@@ -169,12 +171,14 @@ const Secure = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-size: 0.9rem;
+  color:#e8e6df;
   p {
     margin-left: 10px;
   }
   @media (max-width: 768px) {
     justify-content:center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     
   }
 `;
@@ -183,16 +187,18 @@ h3{
   padding: 0 1rem;
 }
   ul {
+    list-style-type: none;
     li {
       a {
-        color: white;
+        color:#e8e6df;
         text-decoration: none;
+        font-size: 0.9rem;
+        &:hover {
+          color: #807e7a;
+        }
       }
       margin-bottom: 10px;
       margin-left: -15px;
-      &:hover {
-        color: gray;
-      }
       
     }
     @media (max-width: 768px) {
@@ -200,9 +206,14 @@ h3{
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 35px;
       list-style:none;
-      text-align:start;
-      font-size: 0.7rem;
-      margin-left: -20px;
+      place-items: center;
+      margin-left: -15vw;
+      li{
+        margin-left: 0;
+        a{
+          font-size: 0.65rem;
+        }
+      }
     }
   }
 `;
@@ -216,8 +227,9 @@ h3{
   }
 `;
 const Contact = styled.div`
+color:#e8e6df;
 h3{
-  padding: 0 1rem;
+  padding: 0 2.2rem;
 }
 hr{
   width: 85%;
@@ -238,7 +250,7 @@ const Address = styled.div`
     margin-left: 0.8rem;
   }
   // border-bottom: 2px solid white;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   margin-top: -15px;
 
   @media (max-width: 768px) {
@@ -259,7 +271,7 @@ const Phone = styled.div`
   p {
     margin-left: 0.8rem;
   }
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -278,7 +290,7 @@ const Email = styled.div`
   p {
     margin-left: 0.8rem;
   }
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -295,6 +307,7 @@ const Social = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-left: 1.8rem;
   @media (max-width: 768px) {
     margin-bottom: 1.3rem;
     justify-content: center;
