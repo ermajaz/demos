@@ -6,10 +6,10 @@ function Promises() {
     <Container>
         <h3>Our Promises</h3>
       <PromiseDiv>
-        <img src="/images/day_shipping.png" alt="" />
-        <img src="/images/classss.png" alt="" />
-        <img src="/images/beyond.png" alt="" />
-        <img src="/images/24h.png" alt="" />
+        <img src="/images/3_day.png" alt="" />
+        <img src="/images/bestPricess.png" alt="" />
+        <img src="/images/free_shippings.png" alt="" />
+        <img src="/images/24hhh.png" alt="" />
       </PromiseDiv>
     </Container>
   );
@@ -20,8 +20,13 @@ export default Promises;
 const Container = styled.div`
   // background: #090b13;
   // background:#f9f9f9;
+  width: 100%;
+  height: 50vh;
   color: black;
+  padding: 0 1.5rem;
   margin: 5vh 0;
+  border-top: 2px solid rgb(213, 208, 208);
+  border-bottom: 2px solid rgb(213, 208, 208);
   h3 {
     font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
     font-size: 2rem;
@@ -36,6 +41,7 @@ const Container = styled.div`
   }
   padding-bottom: 2rem;
   @media (max-width: 768px) {
+    padding: 0;
     h3 {
       margin-bottom: 4vh;
       font-size: 1.8rem;
@@ -52,8 +58,8 @@ const PromiseDiv = styled.div`
   grid-gap: 10px;
   place-items: center;
   img {
-   width: 120px;
-   height: 120px;
+   width: 125px;
+   height: 125px;
   }
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);

@@ -42,13 +42,13 @@ import { clothing } from "../../data";
 
 const Clothing = () => {
   return (
-    <div className="partsContainer">
+    <div className="clothContainer">
       {clothing.map((data) => (
-        <div className="cardContainer" key={data.id}>
-          <div className="card">
+        <div className="clothcardContainer" key={data.id}>
+          <div className="clothcard">
             <img src={data.img} alt="" />
           </div>
-          <div className="name">{data.name}</div>
+          <div className="clothname">{data.name}</div>
         </div>
       ))}
     </div>

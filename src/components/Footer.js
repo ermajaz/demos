@@ -119,16 +119,18 @@ export default Footer;
 
 const Container = styled.div`
   padding: 1.5rem 4rem;
-  min-height: 40vh;
+  min-height: 50vh;
+  height: 50vh;
   background: #090b13;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   
 
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: center;
+    height: auto;
     align-items: center;
     padding: 0.8rem 1rem;
     text-align: center;
@@ -143,7 +145,7 @@ const AboutUS = styled.div`
     padding-right:1rem;
   }
   @media (max-width: 768px) {
-    width: 100%;
+    width: 80%;
     flex-direction: column;
     // justify-content: center;
     align-items: center;

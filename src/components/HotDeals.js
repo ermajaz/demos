@@ -3,7 +3,7 @@ import styled from "styled-components";
 import StarIcon from "@mui/icons-material/Star";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { accessories } from "../data";
+import { hotDeals } from "../data";
 import h1 from "../img/parts/hot_deals.png";
 
 const HotDeals = () => {
@@ -30,49 +30,49 @@ const HotDeals = () => {
     <Container>
       <h3>Hot Deals</h3>
       <StyledCarousel responsive={responsive}>
-        {accessories.map((data) => (
+        {hotDeals.map((data) => (
           <Card key={data.id}>
             <HotDeal src={h1} alt="" />
             <ItemImg src={data.img} alt={data.name} />
             <ItemDetail>
               <ItemRating>
-                <Rating>4.3</Rating>
+                <Rating>{data.rating}</Rating>
                 <StarIcons style={fontS} />
                 <Line>|</Line>
-                <NoOfRating> 313</NoOfRating>
+                <NoOfRating>{data.ratingNumber}</NoOfRating>
               </ItemRating>
               <ItemName>{data.name}</ItemName>
-              <ItemData>30.4cm Analogue Wall Clock</ItemData>
+              <ItemData>{data.detail}</ItemData>
               <ItemPrice>
-                <CurrentPrice>Rs. 599</CurrentPrice>
-                <OriginalPrice>Rs. 1499</OriginalPrice>
-                <Discount> 60% OFF</Discount>
+                <CurrentPrice>Rs. {data.currentPrice}</CurrentPrice>
+                <OriginalPrice>Rs. {data.originalPrice}</OriginalPrice>
+                {/* <Discount> 60% OFF</Discount> */}
               </ItemPrice>
             </ItemDetail>
           </Card>
         ))}
       </StyledCarousel>
       <StyledCarousel responsive={responsive}>
-        {accessories.map((data) => (
+        {hotDeals.map((data) => (
           <Card key={data.id}>
-            <HotDeal src={h1} alt="" />
-            <ItemImg src={data.img} alt={data.name} />
-            <ItemDetail>
-              <ItemRating>
-                <Rating>4.3</Rating>
-                <StarIcons style={fontS} />
-                <Line>|</Line>
-                <NoOfRating> 313</NoOfRating>
-              </ItemRating>
-              <ItemName>{data.name}</ItemName>
-              <ItemData>30.4cm Analogue Wall Clock</ItemData>
-              <ItemPrice>
-                <CurrentPrice>Rs. 599</CurrentPrice>
-                <OriginalPrice>Rs. 1499</OriginalPrice>
-                <Discount> 60% OFF</Discount>
-              </ItemPrice>
-            </ItemDetail>
-          </Card>
+          <HotDeal src={h1} alt="" />
+          <ItemImg src={data.img} alt={data.name} />
+          <ItemDetail>
+            <ItemRating>
+              <Rating>{data.rating}</Rating>
+              <StarIcons style={fontS} />
+              <Line>|</Line>
+              <NoOfRating>{data.ratingNumber}</NoOfRating>
+            </ItemRating>
+            <ItemName>{data.name}</ItemName>
+            <ItemData>{data.detail}</ItemData>
+            <ItemPrice>
+              <CurrentPrice>Rs. {data.currentPrice}</CurrentPrice>
+              <OriginalPrice>Rs. {data.originalPrice}</OriginalPrice>
+              {/* <Discount> 60% OFF</Discount> */}
+            </ItemPrice>
+          </ItemDetail>
+        </Card>
         ))}
       </StyledCarousel>
     </Container>
@@ -113,8 +113,30 @@ const StyledCarousel = styled(Carousel)`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.6rem 0;
+  padding: 1.5rem 0;
   margin-bottom: 2.5rem;
+  button{
+    background:#0072bc;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 0;
+    margin-right: -1.6rem;
+    margin-left: -2.2rem;
+    z-index: 10;
+    font-weight: bold;
+    &:hover{
+      background: #02578e;
+    }
+  }
+  @media (max-width: 768px) {
+    button{
+      background:#0072bc;
+      width: 1rem;
+      height: 1.5rem;
+      margin-right: -0.5rem;
+      margin-left: -0.3rem;
+    }
+  }
 `;
 const Card = styled.div`
   position: relative;
@@ -131,9 +153,13 @@ const Card = styled.div`
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  transition: 0.7s all ease;
+  border: 1.5px solid rgb(213, 208, 208);
   &:hover {
     border-color: transparent;
     box-shadow: 0 0 15px 0 rgba(93, 93, 93, 0.3);
+
+    transform: scale(1.01);
   }
   @media (max-width: 768px) {
     width: 45vw;
@@ -143,20 +169,21 @@ const Card = styled.div`
 `;
 const HotDeal = styled.img`
   position: absolute;
-  width: 9rem;
-  height: 9rem;
-  margin: -2.85rem 0 0 13.1vw;
+  width: 7rem;
+  height: 7rem;
+  margin: -2.2rem 0 0 14vw;
   transition: all 1s ease;
   &:hover {
     transform: scale(1.1);
   }
   @media (max-width: 768px) {
-    margin: -2.85rem 0 0 26vw;
+    margin: -2.25rem 0 0 30vw;
   }
 `;
 const ItemImg = styled.img`
-  width: 100%;
-  height: 78%;
+padding-top: 5rem;
+  width: 60%;
+  height: auto;
   @media (max-width: 768px) {
     width: 100%;
     height: 70%;
@@ -164,7 +191,7 @@ const ItemImg = styled.img`
 `;
 const ItemDetail = styled.div`
   width: 100%;
-  height: 22%;
+  height: 28%;
   display: flex;
   padding: 0.5rem 1rem;
   flex-direction: column;
@@ -218,7 +245,8 @@ const ItemName = styled.span`
   }
 `;
 const ItemData = styled.p`
-  font-size: 0.8rem;
+min-height: 30%;
+  font-size: 0.75rem;
   margin: 0.7rem 0 0.6rem;
   color: #3b3a38;
   @media (max-width: 768px) {
@@ -230,8 +258,9 @@ const ItemPrice = styled.div`
   width: 95%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -249,6 +278,7 @@ const OriginalPrice = styled.p`
   text-decoration-line: line-through;
   margin: 0;
   color: gray;
+  margin-left: 1rem;
   letter-spacing: 0.5px;
   font-size: 0.8rem;
   @media (max-width: 768px) {

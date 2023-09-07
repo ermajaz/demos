@@ -4,6 +4,12 @@ import axios from "axios";
 import { accessories } from "../../data";
 
 // const Accessories = (props) => {
+//   const cycleAccessories = accessories.filter(
+//     (accessory) => accessory.cat === "cycle"
+//   );
+//   const cyclistAccessories = accessories.filter(
+//     (accessory) => accessory.cat === "cyclist"
+//   );
 
 //   const [sub, setSub] = useState(null);
 //   const categoryId = props.categoriesID; // Replace with the actual pramsId value
@@ -41,9 +47,21 @@ import { accessories } from "../../data";
 // export default Accessories;
 
 const Accessories = () => {
+  const cycleAccessories = accessories.filter(
+    (accessory) => accessory.cat === "cycle"
+  );
+  const cyclistAccessories = accessories.filter(
+    (accessory) => accessory.cat === "cyclist"
+  );
   return (
-    <div className="partsContainer">
-      {accessories.map((data) => (
+    <>
+    <div className='container'>
+    <div className='catName'>
+      <h2>For the Cycle</h2>
+      <h2>For the Cyclist</h2>
+    </div>
+    <div className="accessoriesContainer">
+      {cycleAccessories.map((data) => (
         <div className="cardContainer" key={data.id}>
           <div className="card">
             <img src={data.img} alt="" />
@@ -51,7 +69,45 @@ const Accessories = () => {
           <div className="name">{data.name}</div>
         </div>
       ))}
+      {cyclistAccessories.map((data) => (
+        <div className="cardContainer" key={data.id}>
+          <div className="card">
+            <img src={data.img} alt="" />
+          </div>
+          <div className="name">{data.name}</div>
+        </div>
+      ))}
+       {/* <div className="categoryContainer">
+        <div className="category">
+          <h2>Cycle</h2>
+          <div className="gridSection">
+            {cycleAccessories.map((data) => (
+              <div className="cardContainer accessories" key={data.id}>
+                <div className="card">
+                  <img src={data.img} alt="" />
+                </div>
+                <div className="name">{data.name}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="category">
+          <h2>Cyclist</h2>
+          <div className="gridSection">
+            {cyclistAccessories.map((data) => (
+              <div className="cardContainer accessories" key={data.id}>
+                <div className="card">
+                  <img src={data.img} alt="" />
+                </div>
+                <div className="name">{data.name}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> */}
     </div>
+    </div>
+    </>
   );
 };
 

@@ -15,12 +15,12 @@ const Navigation = () => {
     setSelectedSection(section);
   };
 
-  let mainBackgroundColor = "var(--color-primary)"; // Default background color
+  let mainBackgroundColor = "var(--color-red)"; // Default background color
 
   if (selectedSection === "accessories") {
-    mainBackgroundColor = "var(--color-primary)";
+    mainBackgroundColor = "var(--color-blue)";
   } else if (selectedSection === "clothing") {
-    mainBackgroundColor = "var(--color-primary)";
+    mainBackgroundColor = "var(--color-orange)";
   }
 
   useEffect(() => {
@@ -28,32 +28,45 @@ const Navigation = () => {
       .get("https://cyclecircle.onrender.com/api/v1/categories")
       .then((res) => {
         setCategories(res.data);
-        console.log(res.data); // Store the API response data in the state
+        // console.log(res.data); // Store the API response data in the state
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
   }, []);
 
+  const getBackgroundColor = (catName) =>{
+    let backgroundColor = "var(--color-primary)";
+    switch (catName) {
+      case "parts":
+        backgroundColor = "var(--color-red)";
+        break;
+      case "accessories":
+        backgroundColor = "var(--color-blue)";
+        break;
+      case "clothing":
+        backgroundColor = "var(--color-orange)";
+        break;
+      default:
+        backgroundColor = "var(--color-primary)";
+        break;
+        }
+        return backgroundColor;
+  }
+
   return (
     <div className="navigationContainer">
       {/* <div className="sections">
-        {categories.map((category) => (
+        { categories.map((category) => (
           <span
             key={category.id}
             style={{
-              backgroundColor:
-                selectedSection === category.name.toLowerCase()
-                  ? "var(--color-primary)"
-                  : "var(--color-primary)",
+              backgroundColor: getBackgroundColor(category.name.toLowerCase()),
               boxShadow:
                 selectedSection === category.name.toLowerCase()
                   ? "gray 0px -6px 6px -6px"
                   : "0px -2px 4px 0px gray inset",
-              borderRadius:
-                selectedSection === category.name.toLowerCase()
-                  ? "0px 10px 0px 0px"
-                  : "0px",
+              borderRadius: "10px 10px 0px 0px",
             }}
             onClick={() =>
               handleSectionClick(category.name.toLowerCase(), category._id)
@@ -66,15 +79,12 @@ const Navigation = () => {
       <div className="sections">
         <span
           style={{
-            backgroundColor:
-              selectedSection === "parts"
-                ? "var(--color-primary)"
-                : "var(--color-secondary)",
+            backgroundColor: "var(--color-red)",
             boxShadow:
               selectedSection === "parts"
                 ? "gray 0px -6px 6px -6px"
                 : "0px -2px 4px 0px gray inset",
-            borderRadius: selectedSection === "parts" ? "0px 10px 0px 0px" : "0px",
+            borderRadius: "10px 10px 0px 0px",
           }}
           onClick={() => handleSectionClick("parts")}
         >
@@ -82,41 +92,36 @@ const Navigation = () => {
         </span>
         <span
           style={{
-            backgroundColor:
-              selectedSection === "accessories"
-                ? "var(--color-primary)"
-                : "var(--color-secondary)",
+            backgroundColor: "var(--color-blue)",
+              
             boxShadow:
               selectedSection === "accessories"
                 ? "gray 0px -6px 6px -6px"
-                : "-2px -2px 4px 0px gray inset",
+                : "0px -2px 4px 0px gray inset",
 
-                borderRadius: selectedSection === "accessories" ? "10px 10px 0px 0px" : "0px",
+                borderRadius: "10px 10px 0px 0px",
           }}
           onClick={() => handleSectionClick("accessories")}
         >
-          Accessories
+          Accessories(A)
         </span>
         <span
           style={{
-            backgroundColor:
-              selectedSection === "clothing"
-                ? "var(--color-primary)"
-                : "var(--color-secondary)",
+            backgroundColor: "var(--color-orange)",
 
             boxShadow:
               selectedSection === "clothing"
                 ? "gray 0px -6px 6px -6px"
-                : "-2px -2px 4px 0px gray inset",
+                : "0px -2px 4px 0px gray inset",
 
-                borderRadius: selectedSection === "clothing" ? "0px 10px 0px 0px" : "0px",
+                borderRadius: "10px 10px 0px 0px",
           }}
           onClick={() => handleSectionClick("clothing")}
         >
-          Clothing
+          Accessories(B)
         </span>
       </div>
-      <div className="main" style={{ backgroundColor: mainBackgroundColor }}>
+      <div className="main" style={{ backgroundColor: mainBackgroundColor, borderRadius:"0 10px 10px 10px" }}>
         {selectedSection === "parts" && <Parts categoriesID={categoriesID} />}
         {selectedSection === "accessories" && (
           <Accessories categoriesID={categoriesID} />

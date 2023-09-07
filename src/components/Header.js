@@ -133,7 +133,7 @@ const SearchInput = styled.div`
     background: white;
     color: gray;
     border: 2px solid black;
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 0 5px 0 2.5rem;
     text-align: start;
     font-size: 1.1rem;
@@ -194,7 +194,7 @@ const CartDetail = styled.div`
   align-items: center;
   margin-left: 3.5rem;
   padding-bottom: 0.5rem;
-  justify-content: space-between;
+  justify-content: space-around;
   //   margin: 0 10px;
   @media (max-width: 768px) {
     width: 25vw;

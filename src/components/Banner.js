@@ -45,16 +45,22 @@ function ImgSlider() {
 
 export default ImgSlider
 const Container = styled.div`
-width: 100%;
-height:50vh;
+width: 97%;
+height:56vh;
 overflow:hidden;
+margin: 1rem auto;
+padding: 0 1.5rem;
+border-bottom: 2px solid rgb(213, 208, 208);
 @media (max-width: 768px) {
+  width: 100%;
   height:25vh;
+  padding: 0;
+  border-bottom: none;
   
 }
 `
 const Carousel = styled(Slider)`
-width: 92vw;
+width: 86vw;
 margin-left: 2.8rem;
   margin-top: 20px;
   ul li button {
@@ -74,14 +80,16 @@ margin-left: 2.8rem;
   }
   .slick-next:before{
     font-size: 50px;
-    color: rgba(0,0,0,0.5);
+    color: #eeeeee;
+    opacity: 1;
   }
   .slick-prev{
     left: 15px;
   }
   .slick-prev:before{
     font-size: 50px;
-    color: rgba(0,0,0,0.5);
+    color: #eeeeee;
+    opacity: 1;
   }
   button{
     z-index: 1;

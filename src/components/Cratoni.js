@@ -4,17 +4,17 @@ import Header from './Header';
 import Footer from './Footer';
 
 
-function Asics() {
+function Cratoni() {
   return (
     <>
     <Header/>
-    <Container>Asics</Container>
+    <Container>Cratoni</Container>
     <Footer/>
     </>
   )
 }
 
-export default Asics;
+export default Cratoni;
 
 const Container = styled.div`
 width: 90vw;

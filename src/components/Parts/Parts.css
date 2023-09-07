@@ -1,53 +1,76 @@
+
 .partsContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 250px;
-  row-gap: 20px;
+  gap: 200px;
+  row-gap: 25px;
+  height: 70vh;
+  min-height: 70vh;
   width: 100%;
-  padding: 4rem 4rem;
+  color:black;
+  padding: 0rem 4rem;
   box-shadow: 0px 0px 10px 2px gray;
-  /* border-color: transparent; */
-    /* box-shadow: 0 0 15px 0 gray; */
+  border-radius: 0 10px 10px 10px;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
   
     
 }
 
 .cardContainer {
+  /* border: 1px solid gray; */
+  width: 170px;
+  height: 170px;
+  border-radius: 20%;
+  background: radial-gradient(#eee8e8 0%, #eee9e9 51%, #e4dcdc 71%, rgb(223, 213, 213) 100%);
+ 
+  /* box-shadow: 0px 8px 10px 2px gray; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 5px 0px rgb(70, 68, 68);
+
+  gap: 2px;
+}
+.cardContainer:hover{
+  /* background-color: #488ed9; */
+  transform: scale(1.02);
 }
 
 .card {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   cursor: pointer;
-  background-color: #fff;
+  text-align: center;
   border-radius: 5px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  /* overflow: hidden; */
+  /* transition: all 0.3s ease; */
   @media (max-width: 768px) {
     width: 80px;
     height: 80px;
   }
 }
 .card:hover{
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
+
 }
 
 .card > img {
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
 }
 
 .name {
-  width: 100px;
   text-align: center;
   font-size: 16px;
   font-weight: 600;
@@ -58,6 +81,7 @@
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  padding: 10px 0;
   @media (max-width: 768px) {
     font-size: 0.85rem;
     letter-spacing: 0.08rem;
@@ -68,7 +92,7 @@
 @media screen and (max-width: 800px) {
   .partsContainer {
     justify-content: center;
-    gap: 30px; /* Adjust gap for smaller screens */
-    row-gap: 10px; /* Adjust row-gap for smaller screens */
+    gap: 30px; 
+    row-gap: 10px; 
   }
 }

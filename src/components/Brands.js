@@ -7,62 +7,83 @@ function Brands() {
     <Container>
       <h3>OUR TOP BRANDS</h3>
       <OurBrand>
-          <div>
-            <Link to="/asics">
-              <img src="/images/asics.png" alt="" />
-            </Link>
-          </div>
-
-          <div>
-            <Link to="/asics">
-              <img src="/images/cube.png" alt="" />
-            </Link>
-          </div>
-          <div>
-            <Link to="/asics">
-              <img src="/images/gowewear.png" alt="" />
-            </Link>
-          </div>
-          <div>
-            {" "}
-            <Link to="/asics">
-              <img src="/images/lowa.png" alt="" />
-            </Link>
-          </div>
-          <div>
-            <Link to="/asics">
-              <img src="/images/schewale.png" alt="" />
-            </Link>
-          </div>
-          <div>
-            <Link to="/asics">
-              <img src="/images/swear.png" alt="" />
-            </Link>
-          </div>
-        </OurBrand>
-      <ScrollableExclusiveBrand>
-        <ExclusiveBrand>
         <div>
-          <img src="/images/asics.png" alt="" />
+          <Link to="/cratoni">
+            <img src="/images/cratoni.png" alt="" />
+          </Link>
         </div>
 
         <div>
-          <img src="/images/cube.png" alt="" />
+          <Link to="/cratoni">
+            <img src="/images/neco.png" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="/images/gowewear.png" alt="" />
+          <Link to="/cratoni">
+            <img src="/images/kenda.png" alt="" />
+          </Link>
         </div>
         <div>
           {" "}
-          <img src="/images/lowa.png" alt="" />
+          <Link to="/cratoni">
+            <img src="/images/logan.png" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="/images/schewale.png" alt="" />
+          <Link to="/cratoni">
+            <img src="/images/joes.png" alt="" />
+          </Link>
         </div>
         <div>
-          <img src="/images/swear.png" alt="" />
+          <Link to="/cratoni">
+            <img src="/images/rst.png" alt="" />
+          </Link>
         </div>
-      </ExclusiveBrand>
+        <div>
+          <Link to="/cratoni">
+            <img src="/images/rst.png" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link to="/cratoni">
+            <img src="/images/tekto.png" alt="" />
+          </Link>
+        </div>
+        <div>
+          <Link to="/cratoni">
+            <img src="/images/sunrace.png" alt="" />
+          </Link>
+        </div>
+      </OurBrand>
+      <ScrollableExclusiveBrand>
+        <ExclusiveBrand>
+          <div>
+            <img src="/images/cratoni.png" alt="" />
+          </div>
+
+          <div>
+            <img src="/images/sunrace.png" alt="" />
+          </div>
+          <div>
+            <img src="/images/kenda.png" alt="" />
+          </div>
+          <div>
+            {" "}
+            <img src="/images/logan.png" alt="" />
+          </div>
+          <div>
+            <img src="/images/neco.png" alt="" />
+          </div>
+          <div>
+            <img src="/images/rst.png" alt="" />
+          </div>
+          <div>
+            <img src="/images/joes.png" alt="" />
+          </div>
+          <div>
+            <img src="/images/tekto.png" alt="" />
+          </div>
+        </ExclusiveBrand>
       </ScrollableExclusiveBrand>
     </Container>
   );
@@ -71,9 +92,14 @@ function Brands() {
 export default Brands;
 
 const Container = styled.div`
-  background: #090b13;
+  // background: #090b13;
   background: white;
   color: black;
+  margin: 0 1.5rem;
+  transition: 0.7s all ease;
+  border-color: transparent;
+  box-shadow: 0 0 15px 0 rgba(93, 93, 93, 0.3);
+  border-radius: 5px;
   h3 {
     font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
     font-size: 2rem;
@@ -88,6 +114,7 @@ const Container = styled.div`
   }
   // padding-bottom: 4rem;
   @media (max-width: 768px) {
+    margin: 0;
     h3 {
       margin-bottom: 2vh;
       font-size: 1.5rem;
@@ -107,10 +134,10 @@ const OurBrand = styled.div`
   background: #090b13;
   background: white;
   color: black;
+  padding-bottom: 1rem;
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 5px;
   place-items: center;
   div {
     margin: 2rem 0;
@@ -131,15 +158,16 @@ const ScrollableExclusiveBrand = styled.div`
   width: 100%;
   background: #f2f1ed;
 `;
+
 const ExclusiveBrand = styled.div`
   width: auto;
   color: black;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 15px;
+  overflow: hidden;
   place-items: center;
   animation: scrollLeft 15s linear infinite;
-
   div {
     margin: 0.8rem 0;
     img {
@@ -148,7 +176,7 @@ const ExclusiveBrand = styled.div`
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     padding: 0 1rem;
     div {
       margin: 0.5rem 0;
@@ -160,10 +188,10 @@ const ExclusiveBrand = styled.div`
 
   @keyframes scrollLeft {
     0% {
-      transform: translateX(0);
+      transform: translateX(100%);
     }
     100% {
-      transform: translateX(calc(-100% + 6px));
+      transform: translateX(-100%);
     }
   }
 `;

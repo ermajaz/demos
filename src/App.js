@@ -13,7 +13,7 @@ import Suspension from './components/Suspension'
 import WheelSet from './components/WheelSet'
 import DriveTrain from './components/DriveTrain'
 import BrackSet from './components/BrackSet'
-import Asics from './components/Asics';
+import Cratoni from './components/Cratoni';
 import Home from './components/Home';
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/wheelSet" element={<WheelSet/>} />
         <Route exact path="/cockpit" element={<Cockpit/>} />
         <Route exact path="/brackSet" element={<BrackSet/>} />
-        <Route exact path="/asics" element={<Asics/>} />
+        <Route exact path="/cratoni" element={<Cratoni/>} />
       </Routes>
     </div>
   </Router>

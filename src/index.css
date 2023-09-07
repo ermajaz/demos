@@ -1,6 +1,8 @@
 body {
   color: white;
   position: relative;
+  background-color: #f4eded;
+  align-items: center;
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -23,5 +25,8 @@ code {
   --color-primary: #e8eaed;
   --color-secondary: #f9f9f9;
   /* --color-tertiary: #f7f7f7; */
+  --color-red: #fa6d6d;
+  --color-blue: #55a5fb;
+  --color-orange: #fcb142;
   
 }

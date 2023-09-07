@@ -11,6 +11,7 @@ const Parent = styled.div`
   display: grid;
   grid-column-gap: 8px;
   grid-row-gap: 8px;
+  padding: 0 1.5rem;
 
 
   // @media (min-width: 768px) {
@@ -18,6 +19,7 @@ const Parent = styled.div`
   //   grid-template-rows: repeat(2, 1fr);
   // }
   @media (max-width: 768px) {
+    padding: 0;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 4px;
