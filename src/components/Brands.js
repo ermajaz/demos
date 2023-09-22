@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
+import Marquee from "react-fast-marquee";
 
 function Brands() {
   return (
+    <Fade bottom>
     <Container>
       <h3>OUR TOP BRANDS</h3>
       <OurBrand>
@@ -56,53 +59,52 @@ function Brands() {
         </div>
       </OurBrand>
       <ScrollableExclusiveBrand>
-        <ExclusiveBrand>
+        <Marquees autoFill="true">
           <div>
-            <img src="/images/cratoni.png" alt="" />
+            <MarqueeImage src="/images/cratoni.png" alt="" />
           </div>
 
           <div>
-            <img src="/images/sunrace.png" alt="" />
+            <MarqueeImage src="/images/sunrace.png" alt="" />
           </div>
           <div>
-            <img src="/images/kenda.png" alt="" />
+            <MarqueeImage src="/images/kenda.png" alt="" />
           </div>
           <div>
             {" "}
-            <img src="/images/logan.png" alt="" />
+            <MarqueeImage src="/images/logan.png" alt="" />
           </div>
           <div>
-            <img src="/images/neco.png" alt="" />
+            <MarqueeImage src="/images/neco.png" alt="" />
           </div>
           <div>
-            <img src="/images/rst.png" alt="" />
+            <MarqueeImage src="/images/rst.png" alt="" />
           </div>
           <div>
-            <img src="/images/joes.png" alt="" />
+            <MarqueeImage src="/images/joes.png" alt="" />
           </div>
           <div>
-            <img src="/images/tekto.png" alt="" />
+            <MarqueeImage src="/images/tekto.png" alt="" />
           </div>
-        </ExclusiveBrand>
+        </Marquees>
       </ScrollableExclusiveBrand>
     </Container>
+    </Fade>
   );
 }
 
 export default Brands;
 
 const Container = styled.div`
-  // background: #090b13;
   background: white;
   color: black;
-  margin: 0 1.5rem;
+  margin: 0 1.5rem 2.5rem 1.5rem;
   transition: 0.7s all ease;
   border-color: transparent;
   box-shadow: 0 0 15px 0 rgba(93, 93, 93, 0.3);
   border-radius: 5px;
   h3 {
-    font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
@@ -112,13 +114,12 @@ const Container = styled.div`
     padding: 2rem 0 0.5rem 0;
     color: black;
   }
-  // padding-bottom: 4rem;
   @media (max-width: 768px) {
-    margin: 0;
+    margin: 0 0 2.5rem 0;
     h3 {
       margin-bottom: 2vh;
       font-size: 1.5rem;
-      padding: 1rem 0 0 0;
+      padding: 2rem 0 0 0;
       text-align: center;
     }
     div {
@@ -131,8 +132,6 @@ const Container = styled.div`
   }
 `;
 const OurBrand = styled.div`
-  background: #090b13;
-  background: white;
   color: black;
   padding-bottom: 1rem;
   display: grid;
@@ -149,49 +148,35 @@ const OurBrand = styled.div`
     }
   }
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    // margin-left:15vw;
+    grid-template-columns: repeat(3, 1fr);
+    div{
+      margin: 1rem 0;
+      a{
+        img{
+          width: 95px;
+        }
+      }
+    }
   }
 `;
 const ScrollableExclusiveBrand = styled.div`
   overflow: hidden;
   width: 100%;
+  padding: 1rem 0;
   background: #f2f1ed;
+  border-radius: 5px;
 `;
 
-const ExclusiveBrand = styled.div`
-  width: auto;
-  color: black;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 15px;
-  overflow: hidden;
-  place-items: center;
-  animation: scrollLeft 15s linear infinite;
-  div {
-    margin: 0.8rem 0;
-    img {
-      width: 80px;
-    }
-  }
-
+const Marquees =styled(Marquee)`
+display:flex;
+  align-items:center;
+  justify-content:center;
+`
+const MarqueeImage = styled.img`
+  width: 80px; 
+  margin: 0px 40px;
   @media (max-width: 768px) {
-    grid-template-columns: repeat(8, 1fr);
-    padding: 0 1rem;
-    div {
-      margin: 0.5rem 0;
-      img {
-        width: 50px;
-      }
-    }
-  }
-
-  @keyframes scrollLeft {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+    width: 50px;
+    margin: 0px 20px;
   }
 `;

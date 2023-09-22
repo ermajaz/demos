@@ -5,6 +5,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { hotDeals } from "../data";
 import h1 from "../img/parts/hot_deals.png";
+import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 const HotDeals = () => {
   const responsive = {
@@ -27,10 +29,12 @@ const HotDeals = () => {
   };
 
   return (
+    <Fade bottom>
     <Container>
       <h3>Hot Deals</h3>
       <StyledCarousel responsive={responsive}>
         {hotDeals.map((data) => (
+          <Link style={{textDecoration:"none"}} to="/product">
           <Card key={data.id}>
             <HotDeal src={h1} alt="" />
             <ItemImg src={data.img} alt={data.name} />
@@ -50,10 +54,12 @@ const HotDeals = () => {
               </ItemPrice>
             </ItemDetail>
           </Card>
+          </Link>
         ))}
       </StyledCarousel>
       <StyledCarousel responsive={responsive}>
         {hotDeals.map((data) => (
+          <Link style={{textDecoration:"none"}} to="/product">
           <Card key={data.id}>
           <HotDeal src={h1} alt="" />
           <ItemImg src={data.img} alt={data.name} />
@@ -73,23 +79,26 @@ const HotDeals = () => {
             </ItemPrice>
           </ItemDetail>
         </Card>
+        </Link>
         ))}
       </StyledCarousel>
     </Container>
+    </Fade>
+
   );
 };
 
 export default HotDeals;
 
 const Container = styled.div`
-  width: 88%;
+  width: 100%;
   height: auto;
-  padding: 2rem;
+  padding: 0.75rem 7.5rem;
+  background: #d1d4d4;
   // overflow: hidden;
   margin: auto;
   h3 {
-    font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
@@ -113,7 +122,7 @@ const StyledCarousel = styled(Carousel)`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   margin-bottom: 2.5rem;
   button{
     background:#0072bc;
@@ -185,8 +194,9 @@ padding-top: 5rem;
   width: 60%;
   height: auto;
   @media (max-width: 768px) {
-    width: 100%;
-    height: 70%;
+    padding-top: 2rem;
+    width: 65%;
+    height: auto;
   }
 `;
 const ItemDetail = styled.div`
@@ -233,15 +243,15 @@ const NoOfRating = styled.span`
   font-size: 0.9rem;
 `;
 const ItemName = styled.span`
-  font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
-  font-size: 1.1rem;
+  // font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
    @media (max-width: 768px) {
     letter-spacing: 0.05rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 `;
 const ItemData = styled.p`
@@ -251,7 +261,7 @@ min-height: 30%;
   color: #3b3a38;
   @media (max-width: 768px) {
     margin: 0.7rem 0 0.6rem;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
 `;
 const ItemPrice = styled.div`
@@ -263,6 +273,8 @@ const ItemPrice = styled.div`
   margin-bottom: 0.4rem;
   @media (max-width: 768px) {
     width: 100%;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
   }
 `;
 const CurrentPrice = styled.p`
@@ -271,7 +283,7 @@ const CurrentPrice = styled.p`
   // font-weight: 500;
   text-transform: capitalize;
   @media (max-width: 768px) {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 `;
 const OriginalPrice = styled.p`
@@ -282,7 +294,7 @@ const OriginalPrice = styled.p`
   letter-spacing: 0.5px;
   font-size: 0.8rem;
   @media (max-width: 768px) {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
 `;
 const Discount = styled.p`

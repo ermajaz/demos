@@ -1,8 +1,7 @@
-
 .partsContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -11,25 +10,27 @@
   height: 70vh;
   min-height: 70vh;
   width: 100%;
-  color:black;
+  color: black;
   padding: 0rem 4rem;
   box-shadow: 0px 0px 10px 2px gray;
   border-radius: 0 10px 10px 10px;
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    }
-  
-    
+  }
 }
 
 .cardContainer {
-  /* border: 1px solid gray; */
   width: 170px;
   height: 170px;
   border-radius: 20%;
-  background: radial-gradient(#eee8e8 0%, #eee9e9 51%, #e4dcdc 71%, rgb(223, 213, 213) 100%);
- 
+  background: radial-gradient(
+    #eee8e8 0%,
+    #eee9e9 51%,
+    #e4dcdc 71%,
+    rgb(223, 213, 213) 100%
+  );
+
   /* box-shadow: 0px 8px 10px 2px gray; */
   display: flex;
   flex-direction: column;
@@ -38,10 +39,13 @@
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 3px 3px 5px 0px rgb(70, 68, 68);
-
   gap: 2px;
+  @media (max-width: 768px) {
+    width: 100px;
+  height: 100px;
+  }
 }
-.cardContainer:hover{
+.cardContainer:hover {
   /* background-color: #488ed9; */
   transform: scale(1.02);
 }
@@ -55,44 +59,48 @@
   /* overflow: hidden; */
   /* transition: all 0.3s ease; */
   @media (max-width: 768px) {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: auto;
   }
 }
-.card:hover{
+.card:hover {
   /* transform: scale(1.1); */
-
 }
 
 .card > img {
+  padding-top: 10px;
   width: auto;
   height: 100%;
   object-fit: cover;
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 65px;
+  }
 }
 
 .name {
   text-align: center;
-  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif;
-  font-size: 0.9rem;
+  /* font-family: "BrandonGrotesque", "Helvetica", "Arial", sans-serif; */
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   padding: 10px 0;
   @media (max-width: 768px) {
-    font-size: 0.85rem;
+    padding: 5px 0 10px 0;
+    font-size: 0.75rem;
     letter-spacing: 0.08rem;
-    width: 100px;
+    /* width: 100px; */
   }
 }
 
 @media screen and (max-width: 800px) {
   .partsContainer {
     justify-content: center;
-    gap: 30px; 
-    row-gap: 10px; 
+    gap: 30px;
+    row-gap: 10px;
   }
 }

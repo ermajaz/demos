@@ -1,17 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import image1 from "../brandSpotlight/BS-1.jpg";
-import image2 from "../brandSpotlight/BS-4.jpg";
-import image3 from "../brandSpotlight/BS-6.jpg";
-import image4 from "../brandSpotlight/BS-3.jpg";
-import image5 from "../brandSpotlight/BS-5.jpg";
+import image1 from "../../src/icons/b5.png";
+import image2 from "../../src/icons/bannerImg/banner05.png";
+import image4 from "../../src/icons/bannerImg/banner06.jpg";
+import image3 from "../../src/icons/b2.png";
+// import image4 from "../../src/icons/b1.png";
+import image5 from "../../src/icons/b3.png";
+import Fade from "react-reveal/Fade";
 
 
 const Parent = styled.div`
+background: #d1d4d4;
   display: grid;
   grid-column-gap: 8px;
   grid-row-gap: 8px;
-  padding: 0 1.5rem;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 4rem 1.5rem;
 
 
   // @media (min-width: 768px) {
@@ -19,17 +24,17 @@ const Parent = styled.div`
   //   grid-template-rows: repeat(2, 1fr);
   // }
   @media (max-width: 768px) {
-    padding: 0;
-    grid-template-columns: repeat(5, 1fr);
+    padding: 3rem 0;
+    grid-template-columns: repeat(15, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 4px;
-  grid-row-gap: 4px;
+    grid-row-gap: 4px;
   }
 `;
 
 
 const Div = styled.div`
-  height: 250px;
+  height: 280px;
   background-color: rgb(185, 94, 9);
   background-size: cover;
   background-position: center;
@@ -73,14 +78,16 @@ const Div = styled.div`
 
 const BrandSpotlight = () => {
   return (
+    <Fade bottom>
     <Parent>
         {/* grid-area: <grid-row-start> / <grid-column-start> / <grid-row-end> / <grid-column-end>; */}
-        <Div image={image1} area="1 / 1 / 2 / 4"></Div>
-        <Div image={image2} area="1 / 4 / 2 / 6"></Div>
-        <Div image={image3} area="2 / 1 / 3 / 3"></Div>
-        <Div image={image4} area="2 / 3 / 3 / 4"></Div>
-        <Div image={image5} area="2 / 4 / 3 / 6"></Div>
+        <Div image={image1} area="1 / 1 / 2 / 9"></Div>
+        <Div image={image2} area="1 / 9 / 2 / 16"></Div>
+        <Div image={image3} area="2 / 1 / 3 / 6"></Div>
+        <Div image={image4} area="2 / 6 / 3 / 10"></Div>
+        <Div image={image5} area="2 / 10 / 3 / 16"></Div>
     </Parent>
+    </Fade>
   );
 };
 

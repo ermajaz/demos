@@ -15,6 +15,9 @@ import DriveTrain from './components/DriveTrain'
 import BrackSet from './components/BrackSet'
 import Cratoni from './components/Cratoni';
 import Home from './components/Home';
+import ProductDescription from './components/ProductDescription/ProductDescription';
+import Wishlist from './components/Wishlist/Wishlist';
+import Carts from './components/Carts/Carts';
 function App() {
   return (
     <Router>
@@ -34,6 +37,10 @@ function App() {
         <Route exact path="/cockpit" element={<Cockpit/>} />
         <Route exact path="/brackSet" element={<BrackSet/>} />
         <Route exact path="/cratoni" element={<Cratoni/>} />
+        <Route exact path="/product" element={<ProductDescription/>} />
+        <Route exact path="/wishlist" element={<Wishlist/>} />
+        <Route exact path="/carts" element={<Carts/>} />
+
       </Routes>
     </div>
   </Router>

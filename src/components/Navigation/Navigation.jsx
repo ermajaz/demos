@@ -85,6 +85,7 @@ const Navigation = () => {
                 ? "gray 0px -6px 6px -6px"
                 : "0px -2px 4px 0px gray inset",
             borderRadius: "10px 10px 0px 0px",
+            color: "white",
           }}
           onClick={() => handleSectionClick("parts")}
         >

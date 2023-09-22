@@ -1,33 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-import axios from 'axios';
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 
 function Header() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const location = useLocation(); // Get current location
 
   const handleSearch = async () => {
     try {
-        const response = await axios.post("http://localhost:8000/api/v1/search", {
-            search: searchTerm,
-          });
-          console.log(response.data);
+      const response = await axios.post("http://localhost:8000/api/v1/search", {
+        search: searchTerm,
+      });
+      console.log(response.data);
       console.log(response.data);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
-  }
+  };
   return (
     <HeaderDiv>
       <BurgerDiv>
         <MenuIconWrapper>
           <MenuIconStyled style={fontB} />
         </MenuIconWrapper>
-        <Link to="/"><Logo src="/images/CC_lgg.png" /></Link>
+        <Link to="/">
+          <Logo src="/images/CC_lgg.png" />
+        </Link>
       </BurgerDiv>
       <SearchWrap>
         <SearchInput>
@@ -39,18 +44,26 @@ function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </SearchInput>
-          <UserDetail>
-            <UserImg src="https://media.licdn.com/dms/image/D4E03AQGJmddfZULv9g/profile-displayphoto-shrink_400_400/0/1686810989679?e=1697068800&v=beta&t=J6ysNHxkiwrzmrypyXJ7racsYTO7b_ryg1f1nRZ8tN0" />
-            {/* <UserName>SignIn/SignUp</UserName> */}
-            <UserName>Majaz Haque</UserName>
-          </UserDetail>
-          <CartDetail>
-            <FavoriteIcon style={fontS} />
+        <UserDetail>
+          <UserImg src="https://media.licdn.com/dms/image/D4E03AQGJmddfZULv9g/profile-displayphoto-shrink_400_400/0/1686810989679?e=1697068800&v=beta&t=J6ysNHxkiwrzmrypyXJ7racsYTO7b_ryg1f1nRZ8tN0" />
+          {/* <UserName>SignIn/SignUp</UserName> */}
+          <UserName>Majaz Haque</UserName>
+        </UserDetail>
+        <CartDetail>
+          <Link to="/wishlist">
+            {location.pathname === "/wishlist" ? (
+              <FavoriteIcon style={fontS} />
+            ) : (
+              <FavoriteBorderIcon style={fontS} />
+            )}
+          </Link>
+          <Link to="/carts">
             <CartDiv>
               <CartIcon style={fontS} />
               <sup>0</sup>
             </CartDiv>
-          </CartDetail>
+          </Link>
+        </CartDetail>
       </SearchWrap>
     </HeaderDiv>
   );
@@ -59,9 +72,9 @@ function Header() {
 export default Header;
 
 const HeaderDiv = styled.nav`
-position:sticky;
-top: 0;
-z-index: 999;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   height: 70px;
   background: #090b13;
   display: flex;
@@ -83,7 +96,7 @@ const BurgerDiv = styled.div`
   width: 25%;
   justify-content: start;
   margin-top: 0.2rem;
-  a{
+  a {
     width: 60%;
   }
   @media (max-width: 768px) {
@@ -160,7 +173,7 @@ const UserDetail = styled.div`
   @media (max-width: 768px) {
     margin: 0.5rem 0;
     position: static;
-    display:none;
+    display: none;
   }
 `;
 const UserImg = styled.img`
@@ -196,6 +209,10 @@ const CartDetail = styled.div`
   padding-bottom: 0.5rem;
   justify-content: space-around;
   //   margin: 0 10px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
   @media (max-width: 768px) {
     width: 25vw;
     max-width: 30vw;
@@ -205,7 +222,7 @@ const CartDetail = styled.div`
   }
 `;
 
-const FavoriteIcon = styled(FavoriteBorderIcon)`
+const FavoriteIcons = styled(FavoriteBorderIcon)`
   //   margin: 0 2rem;
   cursor: pointer;
   @media (max-width: 768px) {
@@ -221,6 +238,7 @@ const CartDiv = styled.div`
   sup {
     margin-bottom: 20px;
     font-size: 18px;
+    font-family: none;
   }
 
   cursor: pointer;
@@ -230,6 +248,7 @@ const CartIcon = styled(ShoppingCartIcon)``;
 
 const fontS = {
   fontSize: "30",
+  cursor: "pointer",
 };
 const fontB = {
   fontSize: "40",

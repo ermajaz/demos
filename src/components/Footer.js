@@ -143,6 +143,10 @@ const AboutUS = styled.div`
   font-size: 0.9rem;
   h3{
     padding-right:1rem;
+    font-size: 1.2rem;
+  }
+  p{
+    font-size: 1.03rem;
   }
   @media (max-width: 768px) {
     width: 80%;
@@ -187,6 +191,7 @@ const Secure = styled.div`
 const Informations = styled.div`
 h3{
   padding: 0 1rem;
+  font-size: 1.2rem;
 }
   ul {
     list-style-type: none;
@@ -194,7 +199,7 @@ h3{
       a {
         color:#e8e6df;
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 1rem;
         &:hover {
           color: #807e7a;
         }
@@ -223,6 +228,7 @@ h3{
 const Categories = styled(Informations)`
 h3{
   padding: 0 1rem;
+  font-size: 1.2rem;
 }
   @media (max-width: 768px) {
     display: none;
@@ -232,14 +238,15 @@ const Contact = styled.div`
 color:#e8e6df;
 h3{
   padding: 0 2.2rem;
+  font-size: 1.2rem;
 }
 hr{
-  width: 85%;
+  width: 89%;
   margin-left:2.5rem;
 }
 @media (max-width: 768px) {
   hr{
-    width: 95%;
+    width: 92%;
     margin-left:0.8rem;
   }
 }
@@ -252,8 +259,8 @@ const Address = styled.div`
     margin-left: 0.8rem;
   }
   // border-bottom: 2px solid white;
-  font-size: 0.75rem;
-  margin-top: -15px;
+  font-size: 0.84rem;
+  margin-top: -25px;
 
   @media (max-width: 768px) {
     display: flex;
@@ -273,7 +280,7 @@ const Phone = styled.div`
   p {
     margin-left: 0.8rem;
   }
-  font-size: 0.8rem;
+  font-size: 0.83rem;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -292,7 +299,7 @@ const Email = styled.div`
   p {
     margin-left: 0.8rem;
   }
-  font-size: 0.8rem;
+  font-size: 0.83rem;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
